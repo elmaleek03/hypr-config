@@ -1,8 +1,10 @@
-# Hyprland Config (Personal)
+# Desktop Config (Personal)
 
-My personal Hyprland configuration for CachyOS with [Omarchy](https://omarchy.org/).
+My personal Hyprland and Waybar configuration for CachyOS with [Omarchy](https://omarchy.org/).
 
-These files live in `~/.config/hypr/` and override the default Omarchy settings sourced from `~/.local/share/omarchy/default/hypr/`.
+These files override the default Omarchy settings:
+- `hypr/` configs live in `~/.config/hypr/`
+- `waybar/` configs live in `~/.config/waybar/`
 
 ## Changes from Default Omarchy
 
@@ -40,15 +42,40 @@ These files live in `~/.config/hypr/` and override the default Omarchy settings 
 - Hypr session saver enabled
 - HyprEmoji integration
 
+### Waybar (`waybar/`)
+
+**Layout changes (`config.jsonc`):**
+- Bar height increased from `26` to `32`
+- Clock moved from center to right side
+- Taskbar (`wlr/taskbar`) added to center modules
+- Replaced default `cpu` module with custom `custom/cpu-stats` (shows detailed stats via `waybar-cpu-stats`)
+- Added `custom/power-profile` module (power profile indicator with color coding)
+- Added `custom/autorotate-indicator` module
+- Clock format changed to include date: `%A %d %B %H:%M` (was just `%A %H:%M`)
+- Battery format shows percentage in discharging/charging states
+- Battery tooltip uses human-readable "remaining" / "Full in" format
+
+**Style changes (`style.css`):**
+- Background uses semi-transparent dark overlay `rgba(35, 40, 41, 0.75)` instead of opaque theme `@background`
+- Separated `window#waybar` background from `*` selector for transparency effect
+- Added styling for `#custom-cpu-stats`, `#custom-power-profile`, `#custom-autorotate-indicator`
+- Power profile color coding: green (power-saver), yellow (balanced), red (performance)
+- Added `#pulseaudio` extra right margin
+
 ## Setup
 
 ```bash
-# Clone and symlink
-git clone <this-repo> ~/projects/hypr-config
+# Clone
+git clone https://github.com/elmaleek03/hypr-config ~/projects/hypr-config
+
+# Symlink hypr config
 ln -sf ~/projects/hypr-config ~/.config/hypr
+
+# Symlink waybar config
+ln -sf ~/projects/hypr-config/waybar ~/.config/waybar
 ```
 
-Or copy individual files into `~/.config/hypr/`.
+Or copy individual files into their respective `~/.config/` directories.
 
 ## System
 
