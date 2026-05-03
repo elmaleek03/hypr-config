@@ -41,13 +41,15 @@ window#waybar {
 #custom-omarchy,
 #custom-update,
 #custom-power-profile,
-#custom-autorotate-indicator {
+#custom-autorotate-indicator,
+#bluetooth,
+#network,
+#tray,
+#custom-expand-icon,
+#clock {
   min-width: 12px;
-  margin: 0 7.5px;
-}
-
-#pulseaudio {
-  margin-right: 13px;
+  padding: 0 8px;
+  margin: 0;
 }
 
 #custom-autorotate-indicator.active {
@@ -66,22 +68,6 @@ window#waybar {
   color: #f38ba8;
 }
 
-#tray {
-  margin-right: 16px;
-}
-
-#bluetooth {
-  margin-right: 17px;
-}
-
-#network {
-  margin-right: 13px;
-}
-
-#custom-expand-icon {
-  margin-right: 18px;
-}
-
 tooltip {
   padding: 2px;
 }
@@ -90,9 +76,7 @@ tooltip {
   font-size: 10px;
 }
 
-#clock {
-  margin-left: 8.75px;
-}
+
 
 .hidden {
   opacity: 0;
